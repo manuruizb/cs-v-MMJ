@@ -60,7 +60,52 @@ const styles = StyleSheet.create({
         fontSize: 14,
         outlineStyle: 'none',
         placeholderTextColor: 'gray',
-    }
+    },
+    container_hero_detail: {
+        maxWidth: 320, 
+        maxHeight: '90%',
+        width: '90%',
+        alignSelf: 'center',
+        marginTop: 24,
+        marginBottom: 24,
+        padding: 20,
+        borderRadius: 16,
+        backgroundColor: '#f8f9fa',
+        borderWidth: 2,
+        borderColor: '#dee2e6',
+        alignItems: 'center',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 3 },
+        shadowOpacity: 0.1,
+        shadowRadius: 6,
+        elevation: 4,
+      },
+      image_hero_detail: {
+        width: 200,
+        height: 200,
+        borderRadius: 100,
+        marginBottom: 16,
+      },
+      sectionTitle: {
+        fontSize: 20,
+        fontWeight: '600',
+        marginTop: 16,
+        marginBottom: 8,
+        color: '#495057',
+      },
+      detailText: {
+        fontSize: 12,
+        color: '#212529',
+        marginBottom: 4,
+        textAlign: 'center',
+      },
+      title_hero_detail: {
+        fontSize: 28,
+        fontWeight: 'bold',
+        marginBottom: 16,
+        color: '#343a40',
+        textAlign: 'center',
+      },
 });
 
 export default styles;
