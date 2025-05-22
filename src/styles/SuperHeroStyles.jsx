@@ -1,4 +1,6 @@
-import { StyleSheet } from "react-native";
+import {Dimensions, StyleSheet } from "react-native";
+
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
     image: {
@@ -62,13 +64,13 @@ const styles = StyleSheet.create({
         placeholderTextColor: 'gray',
     },
     container_hero_detail: {
-        maxWidth: 320, 
-        maxHeight: '90%',
+        maxWidth: width > 768 ? 500 : width > 480 ? 400 : 320, /* Mayor 768 = Pantallas grandes / 480 a 768 = Teléfono grande o tablet / Menor 480: Teléfono pequeño */
+        maxHeight: height * 0.90,
         width: '90%',
         alignSelf: 'center',
         marginTop: 24,
         marginBottom: 24,
-        padding: 20,
+        padding: width > 768 ? 28 : width > 480 ? 24 : 20,
         borderRadius: 16,
         backgroundColor: '#f8f9fa',
         borderWidth: 2,
