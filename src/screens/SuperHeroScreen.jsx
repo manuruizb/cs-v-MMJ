@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from "react";
 import { Text, View, Image} from "react-native";
-import { fetchHero } from "../api/superHeroApi";
 import styles from "../styles/SuperHeroStyles";
+import useFilteredHeroes from "../hooks/useFilteredHeroes";
 
 export default function SuperHeroScreen({ route }){
-    const { id: heroeId } = route.params;
-    const [hero, setHero] = useState({});
+    const { id} = route.params;
+    const {hero} = useFilteredHeroes(id);
 
-    const loadHeroInfo = async () => {
-        try{
-            const data = await fetchHero(heroeId);
-            setHero(data);
-        }catch (error) {
-            console.error(error);
-        }
-    }
+ 
 
     const getStatColor = (value) => {
         const num = parseInt(value);
@@ -25,9 +17,7 @@ export default function SuperHeroScreen({ route }){
         return '#dc3545'; // rojo
       };
 
-    useEffect(() => {
-        loadHeroInfo();
-    }, []);
+
 
     if (!hero.images) {
         return <Text>Loading image...</Text>;
